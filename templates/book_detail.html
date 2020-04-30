@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}Main{% endblock %}
+
+{%  block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/book_detail.css') }}">
+{% endblock %}
+
+{%  block activate %}
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="{{ url_for('trends') }}">Trends</a></li>
+{% endblock %}
+
+{%  block main %}
+    <h3 class="page-title">Harry Potter and the Order of the Phoenix (Harry Potter, #5)</h3>
+    <hr>
+    <div class="book_info">
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-2">
+                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546910265l/2._SX98_.jpg" height="120px"  class="img-thumbnail">
+            </div>
+            <div class="col-sm-9">
+                <p><b>Author: </b>J.K. Rowling </p>
+                <p><b>Publication year: </b>2004</p>
+                <p><b>Publisher: </b>Scholastic Inc.</p>
+                <p><b>Rating: </b>4.50</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="description">
+        <h4>Abstract: </h4>
+        <p>There is a door at the end of a silent corridor. And it’s haunting Harry Pottter’s dreams. Why else would he be waking in the middle of the night, screaming in terror?<br /><br />Harry has a lot on his mind for this, his fifth year at Hogwarts: a Defense Against the Dark Arts teacher with a personality like poisoned honey; a big surprise on the Gryffindor Quidditch team; and the looming terror of the Ordinary Wizarding Level exams. But all these things pale next to the growing threat of He-Who-Must-Not-Be-Named---a threat that neither the magical government nor the authorities at Hogwarts can stop.<br /><br />As the grasp of darkness tightens, Harry must discover the true depth and strength of his friends, the importance of boundless loyalty, and the shocking price of unbearable sacrifice.<br /><br />His fate depends on them all.</p>
+    </div>
+    <hr>
+    <div class="post-area">
+        <h4>Posts:</h4>
+        <ul>
+            <li class="list">
+                <div class="avatar-group">
+                    <img src="{{url_for('static', filename='images/head_photo.jpg') }}" alt="" class="avatar">
+                </div>
+                <div class="result-group">
+                    <p class="post-title">Post title: <a href="#">Harry Potter- I like it!</a></p>
+                    <p class="book-title">Book title: Harry Potter and the Order of the Phoenix (Harry Potter, #5)</p>
+                    <p class="post-content">Post content: Well I'm ten right now, but I'm in the 4'th Grade. So, I started reading it maybe when I was 8 or 9. But I know an 2'nd Grader in my school, who I convinced to read it, now he says he enjoys it. So I'm kinda saying Harry Potter is the best series I've read in ten years. So, anybody can enjoy it!!</p>
+                    <div class="post-info">
+                        <span class="post-author">kate</span>
+                        <span class="post-time">2020-04-04 18:23:21</span>
+                    </div>
+                </div>
+            </li>
+            <li class="list">
+                <div class="avatar-group">
+                    <img src="{{url_for('static', filename='images/head_photo.jpg') }}" alt="" class="avatar">
+                </div>
+                <div class="result-group">
+                    <p class="post-title">Post title: <a href="#">I was seven when I read it</a></p>
+                    <p class="book-title">Book title: Harry Potter and the Order of the Phoenix (Harry Potter, #5)</p>
+                    <p class="post-content">Post content: I was seven when I first read it, and I don't feel like I missed out on any of the themes or anything, nor was I particularly disturbed or confused. Yes, it has heavy topics, but having grown up with the series I feel like it's important for children to read about heavy topics if they understand them. Complex story lines and ideas shouldn't exclude children, if the individual child is ready for it.</p>
+                    <div class="post-info">
+                        <span class="post-author">meredith</span>
+                        <span class="post-time">2020-04-12 12:29:22</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <hr>
+    <div class="add-post">
+        <h4>Add post:</h4>
+        <form role="form">
+            <div class="form-group">
+                <label for="name">Title:</label>
+                <input type="text" class="form-control" placeholder="Enter post title here">
+            </div>
+            <div class="form-group">
+                <label for="name">Content:</label>
+                <textarea class="form-control" rows="3" placeholder="Enter post content here"></textarea>
+            </div>
+            <div class="form-group" style="text-align: right;">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

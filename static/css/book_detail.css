@@ -1,0 +1,54 @@
+ul{
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.list{
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.avatar-group{
+    width: 38px;
+    height: 100%;
+    float: left;
+}
+
+.avatar-group .avatar{
+    width: 38px;
+    height: 38px;
+}
+
+.result-group{
+    float: left;
+    width: 720px;
+    margin-left: 10px;
+}
+
+.post-title a{
+    color: #259;
+    font-weight: 600;
+}
+
+.post-info{
+    text-align: right;
+}
+
+.book_info{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.description{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.post-area{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.add-post{
+    margin-left: 10px;
+    margin-right: 10px;
+}

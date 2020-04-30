@@ -1,0 +1,52 @@
+{% for post in posts  %}
+            <li>
+                <div class="avatar-group">
+                    <img src="{{url_for('static', filename='images/head_photo.jpg') }}" alt="" class="avatar">
+                </div>
+                <div class="result-group">
+                    <p class="post-title">Post title: <a href="#">{{post.post_title}}</a></p>
+                    <p class="book-title">Book title: {{post.book_id}}</p>
+                    <p class="post_content">Post content: {{post.post_content}}</p>
+                     <p class="book-title"></p>
+                    <div class="post-info">
+                        <span class="post-author">{{post.author.username}}</span>
+                        <span class="post-time">{{post.post_time}}</span>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+
+'posts': Post.query.order_by('-post_time').all()
+
+
+<li>
+            <div class="avatar-group">
+                <img src="{{url_for('static', filename='images/head_photo.jpg') }}" alt="" class="avatar">
+            </div>
+            <div class="result-group">
+                <p class="post-title">Post title: <a href="#">Harry Potter- A book worth reading</a></p>
+                <p class="book-title">Book title: Harry Potter</p>
+                <p class="post_content">Post content: Really good, it's a very interesting book.</p>
+                 <p class="book-title"></p>
+                <div class="post-info">
+                    <span class="post-author">Kate</span>
+                    <span class="post-time">2020-4-4 18:23:21</span>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="avatar-group">
+                <img src="{{url_for('static', filename='images/head_photo.jpg') }}" alt="" class="avatar">
+            </div>
+            <div class="result-group">
+                <p class="post-title">Post title: <a href="#">Everyone should read it!</a></p>
+                <p class="book-title">Book title: Word power made easy</p>
+                <p class="post_content">Post content: Really good, it's a very interesting book. Highly recommend!</p>
+                 <p class="book-title"></p>
+                <div class="post-info">
+                    <span class="post-author">Peter</span>
+                    <span class="post-time">2020-4-4 20:23:21</span>
+                </div>
+            </div>
+        </li>

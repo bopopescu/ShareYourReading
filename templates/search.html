@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Results{% endblock %}
+
+{%  block head %}
+
+{% endblock %}
+
+{%  block activate %}
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="{{ url_for('trends') }}">Trends</a></li>
+{% endblock %}
+
+{%  block main %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-th-list"> Search Result</span></h3>
+        </div>
+        <div class="panel-body">
+            Default: Ordered by popularity
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                {% for i in range(num) %}
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src={{image_urls[i]}} height="90px"  class="img-thumbnail">
+                        </div>
+                        <div class="col-sm-8">
+                            <p><b>Book Title: </b>
+                            {{ book_titles[i] }}</p>
+                            <p><b>Author name: </b>{{ book_authors[i] }} </p>
+                            <p><b>Rating: </b>{{ book_ratings[i] }} </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href="{{ url_for('bd',book_id=book_ids[i]) }}">
+                                <button class="btn btn-info" >Details</button>
+                            </a>
+                        </div>
+                    </div>
+
+                {% endfor %}
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474169725l/15881._SX98_.jpg" height="90px"  class="img-thumbnail">
+                    </div>
+                    <div class="col-sm-8">
+                        <p><b>Book Title: </b>
+                        Harry Potter and the Chamber of Secrets: Sheet Music for Flute with C.D</p>
+                        <p><b>Author name: </b>John Williams </p>
+                        <p><b>Rating: </b>4.64 </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="#">
+                            <button class="btn btn-info" >Details</button>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+{% endblock %}

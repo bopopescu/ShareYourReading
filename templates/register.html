@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{%  block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{%  block activate %}
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="{{ url_for('trends') }}">Trends</a></li>
+{% endblock %}
+
+{%  block main %}
+    <h2 class="page-title">Register Page</h2>
+    <p></p>
+    <form action="" method="POST">
+        <div class="form-container">
+            <div class="form-group">
+                <p>Username: (Number, letter and underscore. Not exceed 20 chars)</p>
+            <div/>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" name="username">
+            </div>
+            <div>
+                <p>Password: (Number, letter and underscore. 6-20 chars)</p>
+            <div/>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password1">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Confirm password" name="password2">
+            </div>
+        </div>
+
+    <div class="btn-center">
+        <button class="btn btn-primary">Submit</button>
+    </div>
+    <p></p>
+
+    </form>
+{% endblock %}

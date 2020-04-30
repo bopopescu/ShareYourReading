@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Post Detail{% endblock %}
+
+{%  block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/post_detail.css') }}">
+{% endblock %}
+
+{%  block activate %}
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="{{ url_for('trends') }}">Trends</a></li>
+{% endblock %}
+
+{%  block main %}
+    <h3 class="page-title">{{ post.post_title }}</h3>
+
+    <p class="post-info">
+        <span class="post-author">Post author: {{post.author.username}}</span>
+        <span class="post-time">Post time: {{post.post_time}}</span>
+    </p>
+    <hr>
+    <p class="post-content">
+    Post content: {{post.post_content}}
+    </p>
+    <hr>
+    <div class="comment-area">
+        <h4>Comment: (0)</h4>
+        <form action="#" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Please enter your comment here" name="comment_content">
+            </div>
+            <div class="form-group" style="text-align: right;">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+
+<p class="book-title"></p>
+
+
+
+
+{% endblock %}

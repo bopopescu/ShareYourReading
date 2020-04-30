@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Main{% endblock %}
+
+{%  block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{%  block activate %}
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="{{ url_for('trends') }}">Trends</a></li>
+{% endblock %}
+
+{%  block main %}
+    <h2 class="page-title">Search Page</h2>
+    <div align="center">
+        <img src="{{url_for('static', filename='images/book.jpg') }}" width="450px">
+    </div>
+    <p></p>
+
+    <form action="{{ url_for('search') }}" method="GET">
+        <div class="form-container">
+
+            <input type="text" class="form-control" placeholder="Find books by title, author, or ISBN" name="q">
+        </div>
+
+        <p></p>
+        <div class="btn-center">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+        <p></p>
+    </form>
+
+
+
+{% endblock %}
