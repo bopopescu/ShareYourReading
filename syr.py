@@ -29,7 +29,7 @@ def login():
         user = User.query.filter(User.username == username, User.password == password).first()
         if user:
             session['user_id'] = user.id
-            # 如果想在31天内保持登录状态
+            # If you want to stay logged in for 31 days
             session.permanent = True
             return redirect(url_for('index'))
         else:
@@ -55,19 +55,19 @@ def register():
         if len(password1) < 6:
             return u'The password is too short!'
 
-        # 用户名 如果被注册了就不能再注册了
+        # If the user name is registered, it can no longer be registered
         user = User.query.filter(User.username == username).first()
         if user:
             return u'The username has been registered!'
         else:
-            # psw1要和psw2相等才可以
+            # psw1need to be equal to psw2
             if password1 != password2:
                 return u'The two passwords are not identical. Please enter again.'
             else:
                 user = User(username=username, password=password1, user_type=user_type)
                 db.session.add(user)
                 db.session.commit()
-                # 如果注册成功，就让页面跳转到登录页面
+                # If the registration is successful, the page will jump to the login page
                 return redirect(url_for('login'))
 
 
