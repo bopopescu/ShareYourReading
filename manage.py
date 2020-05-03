@@ -8,10 +8,10 @@ from models import User, Post, Comment, Book
 
 manager = Manager(app)
 
-# 使用Migrate绑定app和db
+# use Migrate to bind app and db
 migrate = Migrate(app, db)
 
-# 添加迁移脚本的命令到manager中
+# add the comment to manager
 manager.add_command('db', MigrateCommand)
 
 db.init_app(app)
