@@ -25,8 +25,8 @@ class Post(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     post_title = db.Column(db.String(200), nullable=False)
     post_content = db.Column(db.Text, nullable=False)
-    # now()获取的是服务器第一次运行的时间
-    # now 是每次创建一个模型的时候，都获取当前的时间
+    # now() is work to get the first time that the server run
+    # now is to get current time when create a new model
     post_time = db.Column(db.DateTime, default=datetime.now)
     comment_num = db.Column(db.Integer, nullable=False)
 
