@@ -33,7 +33,7 @@ def login():
             session.permanent = True
             return redirect(url_for('index'))
         else:
-            return u'Login failed. Wrong username or password'
+            return render_template('login.html', error = 'Login failed. Invalid username or password')
 
 
 @app.route('/register/', methods={'GET', 'POST'})
@@ -45,24 +45,23 @@ def register():
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
         user_type = 0
-
         if len(username) == 0:
-            return u'The username cannot be empty!'
+            return render_template('register.html', error = 'The username cannot be empty!')
         if len(username) > 20:
-            return u'The username exceed 20 characters!'
+            return render_template('register.html', error = 'The username exceed 20 characters!')
         if len(password1) > 20:
-            return u'The password exceed 20 characters!'
+            return render_template('register.html', error = 'The password exceed 20 characters!')
         if len(password1) < 6:
-            return u'The password is too short!'
+            return render_template('register.html', error = 'The password is too short!')
 
         # If the user name is registered, it can no longer be registered
         user = User.query.filter(User.username == username).first()
         if user:
-            return u'The username has been registered!'
+            return render_template('register.html', error = 'The username has been registered!')
         else:
             # psw1need to be equal to psw2
             if password1 != password2:
-                return u'The two passwords are not identical. Please enter again.'
+                return render_template('register.html', error = 'The two passwords are not identical. Please enter again.')
             else:
                 user = User(username=username, password=password1, user_type=user_type)
                 db.session.add(user)

@@ -3,7 +3,6 @@
 from exts import db
 from datetime import datetime
 
-
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -11,12 +10,10 @@ class User(db.Model):
     password = db.Column(db.String(100), nullable=False)
     user_type = db.Column(db.Integer, nullable=False)
 
-
 class Book(db.Model):
     __tablename__ = 'book'
     book_id = db.Column(db.Integer, primary_key=True)
     book_name = db.Column(db.String(200), nullable=False)
-
 
 class Post(db.Model):
     __tablename__ = 'post'
@@ -32,7 +29,6 @@ class Post(db.Model):
 
     author = db.relationship('User', backref=db.backref('posts'))
     book = db.relationship('Book', backref=db.backref('posts'))
-
 
 class Comment(db.Model):
     __tablename__ = 'comment'
