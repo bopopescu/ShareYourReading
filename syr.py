@@ -126,6 +126,22 @@ def trends():
 
     return render_template('trends.html', **context)
 
+@app.route('/helpAbout/', methods={'GET'})
+def helpAbout():
+    return render_template('helpAbout.html')
+
+@app.route('/helpComment/', methods={'GET'})
+def helpComment():
+    return render_template('helpComment.html')
+
+@app.route('/helpPost/', methods={'GET'})
+def helpPost():
+    return render_template('helpPost.html')
+
+@app.route('/helpSearch/', methods={'GET'})
+def helpSearch():
+    return render_template('helpSearch.html')
+
 
 @app.route('/bd/<book_id>')
 def bd(book_id):

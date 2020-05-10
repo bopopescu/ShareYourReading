@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}helpComment{% endblock %}
+
+{%  block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/helpComment.css') }}">
+{% endblock %}
+
+{%  block activate %}
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="{{ url_for('trends') }}">Trends</a></li>
+{% endblock %}
+
+{%  block main %}
+    <h2 class="page-title">Help-Comment</h2>
+
+{% endblock %}
